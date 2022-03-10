@@ -92,6 +92,8 @@ You can assume that no two strings will have the same length in the array
 function longestString(arr) {
     let array = []
     var tlength = 0;
+    if (arr.length === 0){
+        return ('');}
     for(let i =0; i < arr.length; i++){
       if(tlength < arr[i].length){
         tlength = arr[i].length;
@@ -118,6 +120,7 @@ console.log("longestString");
 console.log("////////////////////////////////////////////////////////////////////////////\n");
 //Add console.logs here to test!  Feel free to format this section however you like
 console.log(longestString(['I', 'do', 'tap', 'frame','love']))
+console.log(longestString(['I']))
 console.log(longestString(["Stupid", "The Quick brown fox", "Brazil", "Special K", "Pork Char Siu"]))
 console.log("\n////////////////////////////////////////////////////////////////////////////\n");
 
@@ -267,7 +270,7 @@ function twoSmallest(small){
     let arr = [];
     let num = small[0];
     if (small.length < 2){
-        return "error";
+        return "undefined";
     } else {
         for (let i = 1; i < small.length; i++){
             if (small[i] < num){
